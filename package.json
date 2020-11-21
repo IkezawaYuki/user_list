@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/IkezawaYuki/user_list/issues"
   },
-  "homepage": "https://github.com/IkezawaYuki/user_list#readme"
+  "homepage": "https://github.com/IkezawaYuki/user_list#readme",
+  "dependencies": {
+    "@types/node": "^14.14.9",
+    "express": "^4.17.1"
+  }
 }
