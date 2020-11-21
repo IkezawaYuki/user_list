@@ -1,0 +1,33 @@
+import UserRepository from "~/src/interfaces/repositories/user";
+
+export type UserListEntry = {
+    id: number
+    name: string
+    path: string
+}
+
+export type UserListUsecaseResponse = {
+    users: UserListEntry[]
+}
+
+export default interface UserListUsecase{
+    execute(): Promise<UserListUsecaseResponse>
+}
+
+class UserListInteractor implements UserListUsecase {
+    userRepo: UserRepository
+
+    constructor(userRepo: UserRepository) {
+        this.userRepo = userRepo
+    }
+
+    public async execute(): Promise<UserListUsecaseResponse> {
+        const res = await this.userRepo.list()
+        const users = res.map((i):UserListEntry => ({
+                id: i.id,
+                name: i.name,
+                path: `/profile/${i.name}`,
+            }))
+        return {users}
+    }
+}
