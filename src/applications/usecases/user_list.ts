@@ -14,7 +14,7 @@ export default interface UserListUsecase{
     execute(): Promise<UserListUsecaseResponse>
 }
 
-class UserListInteractor implements UserListUsecase {
+export class UserListInteractor implements UserListUsecase {
     userRepo: UserRepository
 
     constructor(userRepo: UserRepository) {
