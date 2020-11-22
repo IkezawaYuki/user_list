@@ -19,6 +19,9 @@
   "homepage": "https://github.com/IkezawaYuki/user_list#readme",
   "dependencies": {
     "@types/node": "^14.14.9",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "koa": "^2.13.0",
+    "koa-route": "^3.2.0"
   }
 }
